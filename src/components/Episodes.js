@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { collection, getDocs } from "firebase/firestore";
 import db from '../firebase';
 import Episode from './Episode';
+import Hosts from './Hosts';
 
 function Episodes() {
     const [episodes, setEpisodes] = useState([]);
@@ -27,6 +28,7 @@ function Episodes() {
 
   return (
     <div className="bg-white container mx-auto">
+      <Hosts />
            <div className="space-y-4">
                 {/* <input type="text" placeholder="New Episode?" onChange={(e)=>setEpisodes(e.target.value)} />
                 <button type="submit" className="btn" onClick={addEpisode}>Upload</button>         */}
@@ -34,6 +36,7 @@ function Episodes() {
                     <Episode key={i} episode={episode} index={i} />                        
                 ))}
             </div>
+            
     </div>
   )
 }

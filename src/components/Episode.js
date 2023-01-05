@@ -12,10 +12,22 @@ function Episode({ episode }) {
             <span className="ml-6 text-base">Jan 03, 2023</span>
            </div>
 
-           <h1 className="text-4xl font-bold">Title: {episode.title} </h1>
-           <p className="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo pretium augue, non convallis nunc facilisis quis. Phasellus cursus dui et orci volutpat, ut hendrerit eros vestibulum. Duis id arcu malesuada, dictum libero eget, elementum justo. Aliquam eget augue interdum, pulvinar neque a, commodo sem.
+           <h1 className="text-4xl font-bold">{JSON.parse(episode.title)} </h1>
+           <p className="text-lg leading-8">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo pretium augue, non convallis nunc facilisis quis. Phasellus cursus dui et orci volutpat, ut hendrerit eros vestibulum. Duis id arcu malesuada, dictum libero eget, elementum justo.
            </p>
+          <div className="mt-4">
+            <h2 className="font-semibold text-base">Hosts:</h2>
+            <ul className='mb-2'>
+              <li>Micheal Martins</li>
+              <li>Grace Kamanue</li>
+            </ul>
+
+            <h2 className="font-semibold text-base">Guests: </h2>
+            <ul>
+              <li>Tupac Shakur</li>
+            </ul>
+          </div>
            <span className="mt-2 float-right">
              <a href="#" className="flex items-center">
                <span className="text-sm font-semibold mr-2">Listen</span>
