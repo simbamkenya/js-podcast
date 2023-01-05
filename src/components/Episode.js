@@ -3,7 +3,7 @@ import React from 'react'
 function Episode({ episode }) {
   return (
     <div className="max-w-4xl mx-auto md:flex rounded-md drop-shadow-md bg-green-200 mt-4">
-      <div className="h-48 lg:w-96 flex-none md:h-auto  bg-cover overflow-hidden  bg-lime-200" style={{backgroundImage: "url('/js-podcast.png')"}} title="js-image">
+      <div className="h-48 lg:w-96 flex-none md:h-auto  bg-cover overflow-hidden  bg-white" style={{backgroundImage: "url('/js-podcast.png')"}} alt="js-image">
       </div>
       <div className="">
         <div className="px-8 py-4" >

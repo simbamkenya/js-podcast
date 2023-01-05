@@ -24,8 +24,6 @@ function Episodes() {
       fetchEpisodes();
     }, []);
 
-    console.log(episodes)
-
   return (
     <div className="bg-white container mx-auto">
       <Hosts />
