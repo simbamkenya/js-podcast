@@ -2,7 +2,7 @@ import React from 'react'
 
 function Podcast() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto border-4 border-red-200">
         <div className="mt-12">
             <div className="">
                 <h2 className="text-4xl font-bold py-2">Title of the day</h2>

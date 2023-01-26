@@ -1,53 +1,54 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import db from '../firebase';
 import { auth } from '../firebase';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
-// ​​import {  getFirestore, query, getDocs,​collection,​where, ​​addDoc  ​​} from "firebase/firestore";
 import {  collection, addDoc } from 'firebase/firestore'; 
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+// import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
-
-
-function Login() {
+function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-     
-  const onLogin = (e) => {
-      e.preventDefault();
-      signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          navigate("/")
-          console.log(user);
-      })
-      .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode, errorMessage)
+
+  const registerWithEmailAndPassword = async (e) => {
+    console.log(name)
+    try {
+      e.preventDefault()
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      
+      const user = res.user;
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        name,
+        authProvider: "local",
+        email,
       });
-     
-  }
-// console.log({e: email, p: password})
-
-    const handleLogout = () => {               
-        signOut(auth).then(() => {
-        // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-        // An error happened.
-        });
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
     }
-
- 
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
     <div className="px-8 py-6 mt-4 text-left bg-white shadow-lg rounded-lg">
-        <h3 className="text-2xl font-bold text-center">SignIn</h3>
+        <h3 className="text-2xl font-bold text-center">Register</h3>
         <form action="">
             <div className="mt-4">
+                <div>
+                    <label className="block" htmlFor="name">Name</label>
+                            <input 
+                              className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+                              id="email-address"
+                              name="text"
+                              type="text"                                    
+                              required                                                                                
+                              placeholder="name.."
+                              onChange={(e)=>setName(e.target.value)} 
+                            />
+                </div>
                 <div>
                     <label className="block" htmlFor="email">Email</label>
                             <input 
@@ -74,21 +75,21 @@ function Login() {
                 </div>
                 <div className="flex items-baseline justify-between">
                     <button 
-                      onClick={onLogin}
+                      onClick={registerWithEmailAndPassword}
                       className="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
-                     >Login
+                     >SignUp
                      </button>
                     {/* <a href="#" className="text-sm text-blue-600 hover:underline">Forgot password?</a> */}
-                    <p className="text-sm text-white text-center">
+                    {/* <p className="text-sm text-white text-center">
                             No account yet? {' '}
                             <NavLink 
-                            to="/register" 
+                            to="/signup" 
                             className="text-lg text-blue-600 hover:underline"
-                            // onClick={registerWithEmailAndPassword}
+                            onClick={registerWithEmailAndPassword}
                             >
-                                Signup
+                                Sign up
                             </NavLink>
-                        </p>
+                        </p> */}
                 </div>
             </div>
         </form>
@@ -97,4 +98,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup

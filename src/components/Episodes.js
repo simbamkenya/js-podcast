@@ -3,6 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import db from '../firebase';
 import Episode from './Episode';
 import Hosts from './Hosts';
+import Header from './Header';
 
 function Episodes() {
     const [episodes, setEpisodes] = useState([]);
@@ -23,9 +24,12 @@ function Episodes() {
     useEffect(() => {
       fetchEpisodes();
     }, []);
+    console.log(episodes)
 
   return (
-    <div className="bg-white container mx-auto">
+    <>
+    <Header />
+     <div className="bg-red-100 container mx-auto">
       <Hosts />
            <div className="space-y-4">
                 {/* <input type="text" placeholder="New Episode?" onChange={(e)=>setEpisodes(e.target.value)} />
@@ -33,9 +37,11 @@ function Episodes() {
                 {episodes.map((episode, i) => (
                     <Episode key={i} episode={episode} index={i} />                        
                 ))}
+                
             </div>
             
     </div>
+    </>
   )
 }
 
