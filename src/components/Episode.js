@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Player from './Player';
 
 function Episode({ episode }) {
   return (
-    <div className="max-w-4xl mx-auto md:flex rounded-md drop-shadow-md bg-green-200 mt-4">
+    <div className="max-w-4xl mx-auto md:flex rounded-md drop-shadow-md bg-white mt-8">
       <div className="h-48 lg:w-96 flex-none md:h-auto  bg-cover overflow-hidden  bg-white" style={{backgroundImage: "url('/js-podcast.png')"}} alt="js-image">
       </div>
       <div className="">
@@ -14,9 +15,7 @@ function Episode({ episode }) {
            </div>
 
            <h1 className="text-4xl font-bold">{JSON.parse(episode.title)} </h1>
-           <p className="text-lg leading-8">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo pretium augue, non convallis nunc facilisis quis. Phasellus cursus dui et orci volutpat, ut hendrerit eros vestibulum. Duis id arcu malesuada, dictum libero eget, elementum justo.
-           </p>
+           <p className="text-lg leading-8">{JSON.parse(episode.description)}</p>
           <div className="mt-4">
             <h2 className="font-semibold text-base">Hosts:</h2>
             <ul className='mb-2'>
@@ -29,12 +28,7 @@ function Episode({ episode }) {
               <li>Tupac Shakur</li>
             </ul>
           </div>
-           <span className="mt-2 float-right">
-             <Link to="/login" className="flex items-center">
-               <span className="text-sm font-semibold mr-2">Listen</span>
-               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 fill-orange-400"viewBox="0 0 24 24"><path d="M16 10c0 2.209-1.791 4-4 4s-4-1.791-4-4v-6c0-2.209 1.791-4 4-4s4 1.791 4 4v6zm4-2v2c0 4.418-3.582 8-8 8s-8-3.582-8-8v-2h2v2c0 3.309 2.691 6 6 6s6-2.691 6-6v-2h2zm-7 13.03v-2.03h-2v2.03c-2.282.139-4 .744-4 1.47 0 .829 2.238 1.5 5 1.5s5-.671 5-1.5c0-.726-1.718-1.331-4-1.47z"/></svg>
-             </Link>
-           </span>
+          <Player />
         </div>
       </div>
 

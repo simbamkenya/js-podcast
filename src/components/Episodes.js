@@ -28,12 +28,9 @@ function Episodes() {
 
   return (
     <>
-    <Header />
-     <div className="bg-red-100 container mx-auto">
-      <Hosts />
+     <div className="bg-red-100 container mx-auto mt-2">
+      {/* <Hosts /> */}
            <div className="space-y-4">
-                {/* <input type="text" placeholder="New Episode?" onChange={(e)=>setEpisodes(e.target.value)} />
-                <button type="submit" className="btn" onClick={addEpisode}>Upload</button>         */}
                 {episodes.map((episode, i) => (
                     <Episode key={i} episode={episode} index={i} />                        
                 ))}

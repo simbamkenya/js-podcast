@@ -28,7 +28,6 @@ function Login() {
       });
      
   }
-// console.log({e: email, p: password})
 
     const handleLogout = () => {               
         signOut(auth).then(() => {
@@ -39,8 +38,6 @@ function Login() {
         // An error happened.
         });
     }
-
- 
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
