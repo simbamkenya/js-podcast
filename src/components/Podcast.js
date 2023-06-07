@@ -9,7 +9,7 @@ function Podcast() {
             Javascript Corner
           </h2>
           <div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center flex-col md:flex-row">
               <div className="mr-2">
                 <img
                   alt="Profile pic"
