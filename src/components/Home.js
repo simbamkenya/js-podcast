@@ -7,10 +7,10 @@ import Footer from './Footer'
 function Home() {
   return (
     <>
-    <Header />
-    <Podcast />
-    <Episodes />
-    <Footer />
+      <Header />
+      <Podcast />
+      <Episodes />
+      <Footer />
     </>
   )
 }

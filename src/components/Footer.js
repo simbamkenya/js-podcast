@@ -6,8 +6,9 @@ function Footer() {
       <div class="text-center">
         <p>
           Copyright © 2023 -
-          <a class="font-semibold" href="mailto:m.sohanemon@gmail.com"
-            >Js Podcast</a>
+          <a class="font-semibold" href="mailto:m.sohanemon@gmail.com">
+            Js Podcast
+          </a>
         </p>
       </div>
     </footer>

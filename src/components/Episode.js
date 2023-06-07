@@ -2,11 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Player from './Player'
 
-function Episode({ episode }) {
+function Episode({ episode, url }) {
+  console.log('urrrl', url)
   return (
     <div className="max-w-4xl mx-auto md:flex rounded-md drop-shadow-md bg-white mt-8">
       <div
-        className="h-48 lg:w-96 flex-none md:h-auto  bg-cover overflow-hidden  bg-white"
+        className="h-48 lg:w-96 flex-none md:w-1/2 md:h-auto  bg-cover overflow-hidden  bg-white"
         style={{ backgroundImage: "url('/js-podcast.png')" }}
         alt="js-image"
       ></div>
@@ -37,7 +38,7 @@ function Episode({ episode }) {
               <li>Tupac Shakur</li>
             </ul>
           </div>
-          <Player episodeUrl={episode.url} />
+          <Player url={episode.url} />
         </div>
       </div>
     </div>

@@ -4,9 +4,37 @@ import db from '../firebase'
 import Episode from './Episode'
 import Hosts from './Hosts'
 import Header from './Header'
+import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage'
 
 function Episodes() {
   const [episodes, setEpisodes] = useState([])
+  const [episodesData, setEpisodesData] = useState([])
+  const storage = getStorage()
+
+  const listRef = ref(storage)
+  const urls = []
+
+  console.log('data', urls)
+
+  useEffect(() => {
+    listAll(listRef)
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          let downloadUrl = getDownloadURL(ref(storage, itemRef))
+          downloadUrl
+            .then((url) => {
+              urls.push(url)
+              console.log(url)
+            })
+            .catch((err) => 'error in fetching audio')
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    setEpisodesData(urls)
+  }, [])
+  console.log('urls', urls)
 
   const fetchEpisodes = async () => {
     await getDocs(collection(db, 'episodes'))
@@ -15,7 +43,6 @@ function Episodes() {
           ...doc.data(),
           id: doc.id,
         }))
-
         setEpisodes(newEpisodes)
       })
       .catch()
@@ -23,7 +50,8 @@ function Episodes() {
   useEffect(() => {
     fetchEpisodes()
   }, [])
-  console.log(episodes)
+
+  console.log('urllData', episodesData.length)
 
   return (
     <>
