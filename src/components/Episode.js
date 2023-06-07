@@ -24,7 +24,7 @@ function Episode({ episode, url }) {
             <span className="ml-6 text-base">Jan 03, 2023</span>
           </div>
 
-          <h1 className="text-4xl font-bold">{episode.title} </h1>
+          <h1 className="text-2xl font-bold">{episode.title} </h1>
           <p className="text-lg leading-8">{episode.description}</p>
           <div className="mt-4">
             <h2 className="font-semibold text-base">Hosts:</h2>
