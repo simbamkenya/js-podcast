@@ -5,10 +5,10 @@ import Player from './Player'
 function Episode({ episode, url }) {
   console.log('urrrl', url)
   return (
-    <div className="max-w-4xl mx-auto md:flex rounded-md drop-shadow-md bg-white mt-8">
+    <div className="rounded-md drop-shadow-md bg-white my-8 mx-4">
       <div
-        className="h-48 lg:w-96 flex-none md:w-1/2 md:h-auto  bg-cover overflow-hidden  bg-white"
-        style={{ backgroundImage: "url('/js-podcast.png')" }}
+        className="h-56 bg-cover"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546900703-cf06143d1239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1450&q=80')" }}
         alt="js-image"
       ></div>
       <div className="">
@@ -24,19 +24,24 @@ function Episode({ episode, url }) {
             <span className="ml-6 text-base">Jan 03, 2023</span>
           </div>
 
-          <h1 className="text-2xl font-bold">{episode.title} </h1>
-          <p className="text-lg leading-8">{episode.description}</p>
-          <div className="mt-4">
-            <h2 className="font-semibold text-base">Hosts:</h2>
-            <ul className="mb-2">
-              <li>Micheal Martins</li>
-              <li>Grace Kamanue</li>
-            </ul>
+          <h1 className="text-xl font-bold">{episode.title} </h1>
+          <p className="text-base leading-8">{episode.description}</p>
+          <div className="mt-4 flex">
+            <div className='mr-4'>
+              <h2 className="font-semibold text-base">Hosts:</h2>
+              <ul className="mb-2">
+                <li>Micheal Martins</li>
+                <li>Grace Kamanue</li>
+              </ul>
+            </div>
 
-            <h2 className="font-semibold text-base">Guests: </h2>
-            <ul>
-              <li>Tupac Shakur</li>
-            </ul>
+            <div>
+              <h2 className="font-semibold text-base">Guests: </h2>
+              <ul>
+                <li>Tupac Shakur</li>
+              </ul>     
+            </div>
+
           </div>
           <Player url={episode.url} />
         </div>

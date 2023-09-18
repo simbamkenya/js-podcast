@@ -8,10 +8,10 @@ function Hosts() {
           <img
             alt="Profile pic"
             className="h-36 w-36 rounded-full"
-            src="https://api.lorem.space/image/face?w=150&h=150"
+            src="/one.jpg"
           ></img>
         </div>
-        <span className="text-center">Host Name</span>
+        <span className="text-center">Housine Naese</span>
       </div>
 
       <div className="flex flex-col items-center">
@@ -19,10 +19,10 @@ function Hosts() {
           <img
             alt="Profile pic"
             className="h-36 w-36 rounded-full"
-            src="https://api.lorem.space/image/face?w=150&h=150"
+            src="./two.jpg"
           ></img>
         </div>
-        <span className="text-center">Host Name</span>
+        <span className="text-center">Kamnau Kamande</span>
       </div>
 
       <div className="flex flex-col items-center">
@@ -30,10 +30,10 @@ function Hosts() {
           <img
             alt="Profile pic"
             className="h-36 w-36 rounded-full"
-            src="https://api.lorem.space/image/face?w=150&h=150"
+            src="./three.jpg"
           ></img>
         </div>
-        <span className="text-center">Host Name</span>
+        <span className="text-center">Ann Kenyaa</span>
       </div>
 
       <div className="flex flex-col items-center">
@@ -41,10 +41,10 @@ function Hosts() {
           <img
             alt="Profile pic"
             className="h-36 w-36 rounded-full"
-            src="https://api.lorem.space/image/face?w=150&h=150"
+            src="/four.jpg"
           ></img>
         </div>
-        <span className="text-center">Host Name</span>
+        <span className="text-center">Mary Jane</span>
       </div>
     </div>
   )

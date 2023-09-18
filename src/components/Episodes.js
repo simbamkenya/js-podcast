@@ -10,6 +10,7 @@ function Episodes() {
   const [episodes, setEpisodes] = useState([])
   const [episodesData, setEpisodesData] = useState([])
   const storage = getStorage()
+  const [currentEpisode, setCurrentEpisode] = useState('')
 
   const listRef = ref(storage)
   const urls = []
@@ -56,8 +57,10 @@ function Episodes() {
   return (
     <>
       <div className="bg-red-100 container mx-auto mt-2">
-        {/* <Hosts /> */}
-        <div className="space-y-4">
+        <Hosts />
+        
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="text-4xl font-semibold flex text-center col-start-1 col-end-3 flex items-center justify-center">Episodes</div>
           {episodes.map((episode, i) => (
             <Episode key={i} episode={episode} index={i} />
           ))}

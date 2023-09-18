@@ -49,7 +49,7 @@ function Header() {
         </nav>
       </div>
       <div className="container mx-auto">
-        <h1 className="font-bold text-3xl text-white whitespace-no-wrap">
+        <h1 className="font-bold text-3xl capitalize text-white whitespace-no-wrap">
           JavaScript Podcast
         </h1>
       </div>
