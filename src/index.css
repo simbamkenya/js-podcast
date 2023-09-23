@@ -1,4 +1,22 @@
 *, html, body{
   margin: 0;
   padding: 0;
+  font-family: 'Sofia Sans', sans-serif;
 }
+
+
+input[type='range']::-webkit-slider-thumb {
+  width: 15px;
+  -webkit-appearance: none;
+  height: 15px;
+  background: #ffe384;
+  border-radius: 50%;
+}
+
+input[type='range']::-webkit-slider-thumb:active {
+  background: #ffffff;
+  scale: 1.2;
+}
+
+
+

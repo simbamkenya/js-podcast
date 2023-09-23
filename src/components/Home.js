@@ -6,12 +6,12 @@ import Footer from './Footer'
 
 function Home() {
   return (
-    <>
+    <div>
       <Header />
       <Podcast />
       <Episodes />
       <Footer />
-    </>
+    </div>
   )
 }
 

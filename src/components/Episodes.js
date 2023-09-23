@@ -5,6 +5,7 @@ import Episode from './Episode'
 import Hosts from './Hosts'
 import Header from './Header'
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage'
+import AudioPlayer from './AudioPlayer'
 
 function Episodes() {
   const [episodes, setEpisodes] = useState([])
@@ -56,13 +57,20 @@ function Episodes() {
 
   return (
     <>
-      <div className="bg-red-100 container mx-auto mt-2">
+      <div className="container mx-auto mt-2">
         <Hosts />
+        {/* <AudioPlayer /> */}
         
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="text-4xl font-semibold flex text-center col-start-1 col-end-3 flex items-center justify-center">Episodes</div>
+        <div className="grid  md:grid-cols-1 gap-2">
+          {/* <div className="text-4xl font-semibold flex text-center col-start-1 col-end-3 flex items-center justify-center">Episodes</div> */}
           {episodes.map((episode, i) => (
-            <Episode key={i} episode={episode} index={i} />
+            <div className='flex '>
+              <div className='font-bold my-4 mx-4'>
+                <span className='py-4 oldstyle-nums flex items-center'><p className='uppercase text-[1.8em] font-normal'>Episode</p> <span className='text-[10em] text-[gold]'>{`0${++i}`} </span></span>
+              </div>
+              <Episode key={i} episode={episode} index={i} />
+            </div>
+            
           ))}
         </div>
       </div>
