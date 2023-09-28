@@ -3,7 +3,7 @@ import { FiChevronRight,FiTwitter,FiLinkedin, FiGithub, FiFacebook } from "react
 
 function Footer() {
   return (
-    <footer class="footer footer-center  w-full p-8 sm:p-24 bg-gray-100 text-gray-800 mt-2 bg-black text-white">
+    <footer class="footer footer-center  w-full p-8 sm:p-24 bg-gray-100 bg-black text-white">
       <div class="grid sm:grid-cols-2">
           <div className=''>
             <p className='text-2xl font-semibold mb-4'>Js Corner</p>
